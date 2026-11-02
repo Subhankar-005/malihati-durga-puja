@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover Malihati Durga Puja pandals, decorations, locations and community memories.">
+    <meta name="theme-color" content="#190c0a">
+
+    <title>Malihati Durga Puja | Our Festival, Our Memories</title>
+
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="puja.css">
+    <script src="puja.js" defer></script>
+</head>
+
+<body>
+
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- HEADER -->
+    <header class="header" id="siteHeader">
+        <a href="#home" class="logo">
+            <span class="logo-icon">✺</span>
+            <span>Malihati <small>Durga Puja</small></span>
+        </a>
+
+        <button
+            class="menu-toggle"
+            id="menuToggle"
+            type="button"
+            aria-label="Toggle navigation"
+            aria-expanded="false"
+            aria-controls="mainNav"
+        >☰</button>
+
+        <nav class="navbar" id="mainNav">
+            <a href="#home">Home</a>
+            <a href="#about">Our Story</a>
+            <a href="contact.html">Contact Us</a>
+
+            <!-- Nearest Railway & Bus Stations Dropdown -->
+            <div class="nav-dropdown">
+                <button class="nav-dropbtn" type="button" aria-expanded="false">
+                    <span>Nearest Transports</span> <span class="drop-arrow">▾</span>
+                </button>
+                <div class="nav-dropdown-content">
+                    <div class="nav-category-title">Railway Stations</div>
+                    <!-- <a href="https://www.google.com/maps/search/?api=1&query=Nearest+Railway+Station+Malihati" target="_blank" rel="noopener noreferrer">🚂 Nearest Railway Station <span>↗</span></a> -->
+                    <a href="https://maps.app.goo.gl/gX5mA3EnEvpxrQCT9" target="_blank" rel="noopener noreferrer">🚂 Malihati Talibpur Road (MHTR) <span>↗</span></a>
+                    <a href="https://maps.app.goo.gl/3uj3LXc7rvBuzctw8" target="_blank" rel="noopener noreferrer">🚂 Salar (SALE) <span>↗</span></a>
+                    
+                    <div class="nav-category-title">Bus Terminals</div>
+                    <!-- <a href="https://www.google.com/maps/search/?api=1&query=Nearest+Bus+Stand+Malihati" target="_blank" rel="noopener noreferrer">🚌 Nearest Bus Stand <span>↗</span></a> -->
+                    <a href="https://maps.app.goo.gl/PtiMEhZsq8vn7p3v8" target="_blank" rel="noopener noreferrer">🚌 Kandra Bus Stand <span>↗</span></a>
+                    <a href="https://maps.app.goo.gl/oBHLQtp9XrPSv8PV6" target="_blank" rel="noopener noreferrer">🚌 Salar Bus Stand <span>↗</span></a>
+                </div>
+            </div>
+
+            <a href="#pandals" class="nav-cta">Explore Pandles <span>↗</span></a>
+            <a href="admin.html" class="nav-admin-btn">🔑 Admin Login</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- HERO -->
+        <section class="hero" id="home">
+            <div class="hero-background"></div>
+            <div class="hero-overlay"></div>
+
+            <div class="hero-decoration decoration-one">✺</div>
+            <div class="hero-decoration decoration-two">✧</div>
+            <div class="hero-decoration decoration-three">✦</div>
+
+            <div class="hero-content">
+                <div class="hero-kicker">
+                    <span class="kicker-line"></span>
+                    THE SPIRIT OF MALIHATI
+                    <span class="kicker-line"></span>
+                </div>
+
+                <p class="hero-small">OUR CULTURE. OUR COMMUNITY. OUR PUJA.</p>
+
+                <h1>
+                    Where devotion<br>
+                    <span>becomes<br>celebration.</span>
+                </h1>
+
+                <p class="hero-description">
+                    Every pandal has a story. Every celebration creates a memory.
+                    Explore the colours, creativity and traditions of Malihati Durga Puja.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="#pandals" class="hero-button">
+                        Discover Our Pandals <span>↗</span>
+                    </a>
+                    <a href="#about" class="hero-link">Our story <span>→</span></a>
+                </div>
+
+                <div class="hero-note">
+                    <span class="live-dot"></span>
+                    A living archive of our celebrations
+                </div>
+            </div>
+
+            <a href="#welcome" class="scroll-indicator" aria-label="Scroll down">
+                <span>SCROLL TO EXPLORE</span>
+                <span class="scroll-arrow">↓</span>
+            </a>
+
+            <div class="hero-year">MALIHATI · WEST BENGAL</div>
+        </section>
+
+        <!-- WELCOME STRIP -->
+        <section class="welcome-strip" id="welcome">
+            <div class="strip-item">
+                <span class="strip-icon">✧</span>
+                <div>
+                    <strong>Rooted in tradition</strong>
+                    <small>Celebrating our heritage</small>
+                </div>
+            </div>
+
+            <div class="strip-item">
+                <span class="strip-icon">⌖</span>
+                <div>
+                    <strong>Our neighbourhood</strong>
+                    <small>Local pandals, local stories</small>
+                </div>
+            </div>
+
+            <div class="strip-item">
+                <span class="strip-icon">♡</span>
+                <div>
+                    <strong>Memories forever</strong>
+                    <small>One beautiful year at a time</small>
+                </div>
+            </div>
+        </section>
+
+        <!-- YEAR SELECTOR -->
+        <section class="year-section reveal">
+            <p class="section-label">A JOURNEY THROUGH TIME</p>
+            <h2>Every year tells <span>a story.</span></h2>
+            <p class="section-description">
+                Revisit the celebrations, pandals and moments that make our Puja special.
+            </p>
+
+            <div class="year-selector">
+                <label for="yearSelect">EXPLORE A YEAR</label>
+                <select id="yearSelect"></select>
+            </div>
+        </section>
+
+        <!-- PANDAL GALLERY -->
+        <section id="pandals" class="pandals-section">
+            <div class="section-heading reveal">
+                <p class="section-label">THE HEART OF OUR CELEBRATION</p>
+                <h2 id="yearTitle">Durga Puja 2026</h2>
+                <p class="gallery-subtitle">
+                    Find your favourite pandal. Relive the festive spirit.
+                </p>
+                <span id="pandalCount" class="pandal-count">0 Pandals</span>
+            </div>
+
+            <div class="search-container reveal">
+                <span class="search-icon" aria-hidden="true">⌕</span>
+                <input
+                    type="search"
+                    id="searchInput"
+                    placeholder="Search by pandal name or location..."
+                    aria-label="Search pandal name or location"
+                >
+                <span class="search-hint">SEARCH</span>
+            </div>
+
+            <div id="pandalContainer" class="pandal-grid"></div>
+
+            <div id="noResult" class="no-result" aria-live="polite">
+                <div class="empty-icon">✧</div>
+                <h3>No Pandal Found</h3>
+                <p>Try searching with another name or location.</p>
+            </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section id="about" class="about-section">
+            <div class="about-pattern"></div>
+
+            <div class="about-content reveal">
+                <p class="section-label">MORE THAN A FESTIVAL</p>
+
+                <h2>
+                    Our Puja.<br>
+                    <span>Our people.</span><br>
+                    Our forever.
+                </h2>
+
+                <div class="about-divider"></div>
+
+                <p>
+                    Malihati Durga Puja is a digital archive dedicated to our
+                    community's pandals, decorations, traditions and celebrations.
+                    It brings our local festivities together in one place.
+                </p>
+
+                <p>
+                    Every photograph captures a moment. Every year adds a new chapter.
+                    Together, we preserve our memories for the generations to come.
+                </p>
+
+                <a href="#pandals" class="about-button">
+                    Explore the memories <span>↗</span>
+                </a>
+            </div>
+
+            <div class="about-side-text">SHARODIYA · OUR HERITAGE</div>
+        </section>
+
+        
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <a href="#home" class="footer-logo">✺ Malihati Durga Puja</a>
+
+            <p class="footer-tagline">
+                One community. Many pandals. Endless memories.
+            </p>
+
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#pandals">Explore Pandals</a>
+                <a href="#about">Our Story</a>
+                <a href="#creators">Contact Us</a>
+            </div>
+
+            <p class="copyright">
+                © <span id="copyrightYear">2026</span> Malihati Durga Puja.
+                Made with <span class="heart">♥</span> for our community.
+            </p>
+        </footer>
+    </main>
+
+    <!-- PANDAL DETAILS MODAL -->
+    <div id="pandalModal" class="modal" aria-hidden="true">
+        <div
+            class="modal-box"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="modalName"
+            aria-describedby="modalDescription"
+            tabindex="-1"
+        >
+            <button
+                class="close-button"
+                id="closeModalButton"
+                type="button"
+                aria-label="Close pandal details"
+            >×</button>
+
+            <div class="modal-image-wrap">
+                <img id="modalImage" src="" alt="Durga Puja pandal">
+                <span class="modal-image-label">MALIHATI DURGA PUJA</span>
+            </div>
+
+            <div class="modal-content">
+                <p id="modalYear" class="modal-year"></p>
+                <h2 id="modalName"></h2>
+                <p id="modalPlace" class="modal-place"></p>
+                <p id="modalDescription" class="modal-description"></p>
+
+                <a
+                    id="mapButton"
+                    href="#"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="map-button"
+                >⌖ View Location on Google Maps <span>↗</span></a>
+            </div>
+        </div>
+    </div>
+
+    <button id="backToTop" class="back-to-top" type="button" aria-label="Back to top">↑</button>
+
+</body>
+</html>
